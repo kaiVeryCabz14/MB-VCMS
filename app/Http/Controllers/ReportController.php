@@ -46,6 +46,7 @@ class ReportController extends Controller
         
         try {
         $record = $this->getRecordByType($reportType, $recordId);
+        //dd($record);
         if (!$record) {
                 \Log::warning('Record not found', ['reportType' => $reportType, 'recordId' => $recordId]);
                 abort(404, 'Record not found for report type: ' . $reportType . ' with ID: ' . $recordId);
